@@ -47,11 +47,12 @@ private String photo;
 @Column(name = "rate")
 private long rate;
 
+
 public User() {
 	super();
 	
-	
 }
+
 
 public long getId() {
 	return id;

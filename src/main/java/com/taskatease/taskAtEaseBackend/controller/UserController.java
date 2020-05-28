@@ -17,20 +17,21 @@ import com.taskatease.taskAtEaseBackend.repository.UserRepository;
 @RestController
 @RequestMapping("/tae_api/v1")
 
-
 public class UserController {
 
-@Autowired
-private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
-@GetMapping("/user")
-public List<User> getAllCustomers(Model model) {
+	//get all user 
+
+	@GetMapping("/user")
+	public List<User> getAllUser(Model model) {
+		
+	return this.userRepository.findAll();
 	
-return this.userRepository.findAll();
+	}
 
-}
-
-//get a user by email
+	//get a user by email
 
 	@GetMapping("/user/{email}")
 	public ResponseEntity<User> getUserByEmail(@PathVariable(value = "email") String email)
