@@ -20,6 +20,8 @@ public class TaskPhotoController {
 	@Autowired
 	private TaskPhotoRepository taskPhotoRepository;
 	
+	//find all photo
+	
 	@GetMapping("/taskphoto")
 	public List<TaskPhoto> getAllTaskPhoto(Model model) {
 		
@@ -27,11 +29,12 @@ public class TaskPhotoController {
 		
 	}
 	
+	//find all by worker
+	
 	@GetMapping("/taskphoto/{worker}")
 	public List<TaskPhoto> getTaskPhotoByWorker(@PathVariable(value="worker") Long worker){
 		
 	return this.taskPhotoRepository.findAllByWorker(worker);
 		
 	}
-	
 }

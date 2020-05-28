@@ -28,10 +28,19 @@ public class WorkerSkillController {
 	
 	}
 
-	//get work skill by worker
+	//find by skill
 
-	@GetMapping("/workerskill/{worker}")
-	public List<WorkerSkill> getSkillByWorker(@PathVariable(value = "worker") Long worker) {
+	@GetMapping("/workerskill/{skill}")
+	public List<WorkerSkill> getAllBySkill(@PathVariable(value = "skill") String skill) {
+		
+	return this.workerSkillRepository.findAllBySkill(skill);
+	
+	}
+	
+	//find by worker
+
+	@GetMapping("/workerskillbyworker/{worker}")
+	public List<WorkerSkill> getAllByWorker(@PathVariable(value = "worker") Long worker) {
 		
 	return this.workerSkillRepository.findAllByWorker(worker);
 	

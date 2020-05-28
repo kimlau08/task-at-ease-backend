@@ -9,4 +9,6 @@ import com.taskatease.taskAtEaseBackend.model.WorkerSkill;
 public interface WorkerSkillRepository extends JpaRepository<WorkerSkill, Long>{
 
 	List<WorkerSkill> findAllByWorker(Long worker);
+	
+	List<WorkerSkill> findAllBySkill(String skill);
 }

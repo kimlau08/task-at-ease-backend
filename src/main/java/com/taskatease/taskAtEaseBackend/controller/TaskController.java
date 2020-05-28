@@ -47,7 +47,15 @@ public class TaskController {
 	return this.taskRepository.findAllByOwner(owner);
 	
 	}
+
+	//get tasks by owner
+
+	@GetMapping("/taskbyworker/{worker}")
+	public List<Task> getTaskByWorker(@PathVariable(value = "worker") Long worker) {
+		
+	return this.taskRepository.findAllByWorker(worker);
 	
+	}
 	//  save new task 
 	  
 	  @PostMapping("/task")
