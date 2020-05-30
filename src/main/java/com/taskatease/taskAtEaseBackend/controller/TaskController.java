@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.taskatease.taskAtEaseBackend.exception.ResourceNotFoundException;
 import com.taskatease.taskAtEaseBackend.model.Task;
+import com.taskatease.taskAtEaseBackend.model.User;
 import com.taskatease.taskAtEaseBackend.repository.TaskRespository;
 
 @RestController
@@ -39,6 +40,17 @@ public class TaskController {
 	
 	}
 
+	//get a task by id
+
+	@GetMapping("/taskbyid/{id}")
+	public ResponseEntity<Task> getTaskById(@PathVariable(value = "id") Long taskId)
+	    throws ResourceNotFoundException {
+	    Task task = taskRepository.findById(taskId)
+	      .orElseThrow(() -> new ResourceNotFoundException("Task not found. id :: " + taskId));
+	    return ResponseEntity.ok().body(task);
+	}
+	
+	
 	//get tasks by owner
 
 	@GetMapping("/task/{owner}")
@@ -48,7 +60,7 @@ public class TaskController {
 	
 	}
 
-	//get tasks by owner
+	//get tasks by worker
 
 	@GetMapping("/taskbyworker/{worker}")
 	public List<Task> getTaskByWorker(@PathVariable(value = "worker") Long worker) {
@@ -56,6 +68,17 @@ public class TaskController {
 	return this.taskRepository.findAllByWorker(worker);
 	
 	}
+
+	//get tasks by status
+
+	@GetMapping("/taskbystatus/{status}")
+	public List<Task> getTaskByStatus(@PathVariable(value = "status") String status) {
+		
+	return this.taskRepository.findAllByStatus(status);
+	
+	}
+	
+	
 	//  save new task 
 	  
 	  @PostMapping("/task")
