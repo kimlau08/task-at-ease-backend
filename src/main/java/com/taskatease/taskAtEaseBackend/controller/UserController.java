@@ -30,6 +30,16 @@ public class UserController {
 	return this.userRepository.findAll();
 	
 	}
+	
+	//get a user by id
+
+	@GetMapping("/userbyid/{id}")
+	public ResponseEntity<User> getUserById(@PathVariable(value = "id") Long id)
+	    throws ResourceNotFoundException {
+	    User user = userRepository.findById(id)
+	      .orElseThrow(() -> new ResourceNotFoundException("User not found. Id :: " + id));
+	    return ResponseEntity.ok().body(user);
+	}
 
 	//get a user by email
 
