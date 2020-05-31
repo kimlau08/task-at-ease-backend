@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.taskatease.taskAtEaseBackend.exception.ResourceNotFoundException;
 import com.taskatease.taskAtEaseBackend.model.Task;
-import com.taskatease.taskAtEaseBackend.model.User;
 import com.taskatease.taskAtEaseBackend.repository.TaskRespository;
 
 @RestController
@@ -105,10 +104,10 @@ public class TaskController {
 	  }
 
 
-		//  Update review
+		//  Update task
 		  
 		  @PutMapping("/task/{id}")
-		  public ResponseEntity<Task> updateReviews(@PathVariable(value = "id") Long taskId,
+		  public ResponseEntity<Task> updateTask(@PathVariable(value = "id") Long taskId,
 				    @Valid @RequestBody Task taskDetails)
 				    throws ResourceNotFoundException {
 			  		Task task = taskRepository.findById(taskId)
@@ -116,6 +115,8 @@ public class TaskController {
 			      
 			      
 			  		task.setOwner(taskDetails.getOwner()); 
+			  		task.setOwnername(taskDetails.getOwnername());
+			  		task.setOwneremail(taskDetails.getOwneremail());
 			  		task.setKind(taskDetails.getKind());
 			  		task.setStatus(taskDetails.getStatus());
 			  		task.setDetails(taskDetails.getDetails());
