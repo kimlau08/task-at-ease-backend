@@ -14,7 +14,7 @@ INSERT INTO users (id, name, email, password, free, street, city, st, zip, photo
 
 
 INSERT INTO tasks (id, owner, ownername, owneremail, kind, status, details, skill1, skill2, skill3, hours, worker) VALUES (1, 5, 'u5 Rancher', 'u5@gmail.com', 'carpentry', 'closed', 'Need skillful person to create custom cabinet', 'carpentry', 'painting', 'restoring', 40, 1);
-INSERT INTO tasks (id, owner, ownername, owneremail, kind, status, details, skill1, skill2, skill3, hours, worker) VALUES (2, 5, 'u5 Rancher', 'u5@gmail.com', 'cleaning', 'closed', 'Immediate need for a dependable person to clean up after flood', 'cleaning', 'sanitizing', 'restoring', 40, 1);
+INSERT INTO tasks (id, owner, ownername, owneremail, kind, status, details, skill1, skill2, skill3, hours, worker) VALUES (2, 5, 'u5 Rancher', 'u5@gmail.com', 'cleaning', 'closed', 'Immediate need for a dependable person to clean up after flood', 'cleaning', 'sanitizing', 'restoring', 40, 3);
 INSERT INTO tasks (id, owner, ownername, owneremail, kind, status, details, skill1, skill2, skill3, hours, worker) VALUES (3, 5, 'u5 Rancher', 'u5@gmail.com', 'carpentry', 'closed', 'Craft a gift for granny before the birthday', 'carpentry', 'painting', 'restoring', 16, 4);
 INSERT INTO tasks (id, owner, ownername, owneremail, kind, status, details, skill1, skill2, skill3, hours, worker) VALUES (4, 5, 'u5 Rancher', 'u5@gmail.com', 'painting', 'closed', 'Maintenance paint job on house interior', 'painting', 'restoring', 'N/A', 16, 2);
 INSERT INTO tasks (id, owner, ownername, owneremail, kind, status, details, skill1, skill2, skill3, hours, worker) VALUES (5, 5, 'u5 Rancher', 'u5@gmail.com', 'installing', 'closed', 'Install new electric switches', 'installing', 'N/A', 'N/A', 2, 2);

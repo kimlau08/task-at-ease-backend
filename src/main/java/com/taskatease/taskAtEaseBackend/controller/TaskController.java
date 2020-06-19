@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.taskatease.taskAtEaseBackend.exception.ResourceNotFoundException;
 import com.taskatease.taskAtEaseBackend.model.Task;
-import com.taskatease.taskAtEaseBackend.repository.TaskRespository;
+import com.taskatease.taskAtEaseBackend.repository.TaskRepository;
 
 @RestController
 @RequestMapping("/tae_api/v1")
@@ -28,7 +28,7 @@ import com.taskatease.taskAtEaseBackend.repository.TaskRespository;
 public class TaskController {
 
 	@Autowired
-	private TaskRespository taskRepository;
+	private TaskRepository taskRepository;
 
 	//get all task
 
