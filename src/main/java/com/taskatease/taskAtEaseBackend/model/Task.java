@@ -1,13 +1,9 @@
 package com.taskatease.taskAtEaseBackend.model;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -52,9 +48,8 @@ public class Task {
 	@Column(name = "worker")
 	private long worker;
 	
-//	@OneToMany(targetEntity = TaskPhoto.class, mappedBy = "id", orphanRemoval = false, fetch = FetchType.LAZY)
-//	private Set<TaskPhoto> taskphoto; 
-	
+
+
 	
 	public long getId() {
 		return id;
@@ -174,16 +169,6 @@ public class Task {
 	public void setWorker(long worker) {
 		this.worker = worker;
 	}
-
-
-//	public Set<TaskPhoto> getTaskphoto() {
-//		return taskphoto;
-//	}
-//
-//
-//	public void setTaskphoto(Set<TaskPhoto> taskphoto) {
-//		this.taskphoto = taskphoto;
-//	}
 
 
 	public Task() {

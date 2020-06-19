@@ -34,11 +34,14 @@ public class TaskPhoto {
 	@JoinColumn(name="task", insertable=false, updatable=false)
 	@Fetch(FetchMode.JOIN)
 	private Task taskobj;
-		
+	
+	
 	public TaskPhoto() {
 		super();
 	}
 
+	//getters and setters
+	
 	public long getId() {
 		return id;
 	}
