@@ -50,7 +50,7 @@ CREATE TABLE taskPhoto (
     id INTEGER PRIMARY KEY,
     worker INTEGER NOT NULL,
     task INTEGER NOT NULL,
-    photo VARCHAR(511) NOT NULL
+    tskphoto VARCHAR(511) NOT NULL
 );
 
 CREATE TABLE skills (

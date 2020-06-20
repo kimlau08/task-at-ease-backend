@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
@@ -27,39 +28,55 @@ public class TaskPhoto {
 	@Column(name = "task")
 	private long task;	
 	
-	@Column(name = "photo")
-	private String photo;
+	@Column(name = "tskphoto")
+	private String tskphoto;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="task", insertable=false, updatable=false)
 	@Fetch(FetchMode.JOIN)
 	private Task taskobj;
 	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="worker", insertable=false, updatable=false)
+	@Fetch(FetchMode.JOIN)
+	private User userobj;
+	
 	
 	public TaskPhoto() {
 		super();
 	}
 
-	//getters and setters
+
+	//getters
 	
 	public long getId() {
 		return id;
 	}
 
+
 	public long getWorker() {
 		return worker;
 	}
+
 
 	public long getTask() {
 		return task;
 	}
 
-	public String getPhoto() {
-		return photo;
+
+	public String getTskphoto() {
+		return tskphoto;
 	}
+
 
 	public Task getTaskobj() {
 		return taskobj;
 	}
+
+
+	public User getUserobj() {
+		return userobj;
+	}
+
 	
 }

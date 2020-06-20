@@ -12,10 +12,11 @@ public interface TaskPhotoRepository extends JpaRepository<TaskPhoto, Long>{
 
 	List<TaskPhoto> findAllByWorker(Long worker);
 	
-	@Query("SELECT new com.taskatease.taskAtEaseBackend.dto.PhotoInnerJoinTaskDto(p.worker, p.task, p.photo, " + 
+	@Query("SELECT new com.taskatease.taskAtEaseBackend.dto.PhotoInnerJoinTaskDto(p.worker, p.task, p.tskphoto, " + 
 	"       t.owner, t.owneremail, t.kind, t.status, t.details, " + 
 	"		 t.skill1, t.skill2, t.skill3," + 
 	"		 t.hours )" + 
-	"FROM TaskPhoto p INNER JOIN p.taskobj t ")
+	"FROM TaskPhoto p INNER JOIN p.taskobj t " +
+	"ORDER BY p.worker ")
 	List<PhotoInnerJoinTaskDto> fetchPhotoTaskInnerJoin();
 }

@@ -35,14 +35,14 @@ INSERT INTO workerSkills (id, worker, skill) VALUES (9, 3, 'cleaning');
 INSERT INTO workerSkills (id, worker, skill) VALUES (10, 4, 'carpentry');
 INSERT INTO workerSkills (id, worker, skill) VALUES (11, 4, 'delivery');
 
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (1, 1, 1, '/u1Woodwork1.jfif');
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (2, 1, 1, '/u1Woodwork2.jpg');
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (3, 1, 6, '/u1Painting.jpg');
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (4, 2, 4, '/u2Painting.jpg');
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (5, 2, 5, '/u2Install.jpg');
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (6, 3, 2, '/u3beforeClean.png');
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (7, 3, 2, '/u3afterClean.png');
-INSERT INTO taskPhoto (id, worker, task, photo) VALUES (8, 4, 3, '/u4Woodwork.jpg');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (1, 1, 1, '/u1Woodwork1.jfif');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (2, 1, 1, '/u1Woodwork2.jpg');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (3, 1, 6, '/u1Painting.jpg');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (4, 2, 4, '/u2Painting.jpg');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (5, 2, 5, '/u2Install.jpg');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (6, 3, 2, '/u3beforeClean.png');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (7, 3, 2, '/u3afterClean.png');
+INSERT INTO taskPhoto (id, worker, task, tskphoto) VALUES (8, 4, 3, '/u4Woodwork.jpg');
 
 INSERT INTO skills (id, skill) VALUES (1, 'N/A');
 INSERT INTO skills (id, skill) VALUES (2, 'delivery');

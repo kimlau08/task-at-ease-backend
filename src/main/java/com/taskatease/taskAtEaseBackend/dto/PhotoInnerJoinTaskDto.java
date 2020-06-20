@@ -4,7 +4,7 @@ public class PhotoInnerJoinTaskDto {
 
 	private long worker;
 	private long task;
-	private String photo;
+	private String tskphoto;
 	
 	private long owner;
 	private String owneremail;
@@ -20,7 +20,7 @@ public class PhotoInnerJoinTaskDto {
 
 				 long worker,
 				 long task,
-				 String photo,
+				 String tskphoto,
 				
 				 long owner,
 				 String owneremail,
@@ -35,7 +35,7 @@ public class PhotoInnerJoinTaskDto {
 
 		this.worker = worker;
 		this.task = task;
-		this.photo = photo;
+		this.tskphoto = tskphoto;
 		
 		this.owner = owner;
 		this.owneremail = owneremail;
@@ -48,16 +48,13 @@ public class PhotoInnerJoinTaskDto {
 		this.hours = hours;
 	}
 
+	
+	//getters and setters
+
 	public long getWorker() {
 		return worker;
 	}
 	
-	
-	//getters and setters
-
-	public void setWorker(long worker) {
-		this.worker = worker;
-	}
 
 	public long getTask() {
 		return task;
@@ -67,12 +64,12 @@ public class PhotoInnerJoinTaskDto {
 		this.task = task;
 	}
 
-	public String getPhoto() {
-		return photo;
+	public String getTskphoto() {
+		return tskphoto;
 	}
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setTskphoto(String tskphoto) {
+		this.tskphoto = tskphoto;
 	}
 
 	public long getOwner() {
@@ -146,13 +143,19 @@ public class PhotoInnerJoinTaskDto {
 	public void setHours(long hours) {
 		this.hours = hours;
 	}
+
+	public void setWorker(long worker) {
+		this.worker = worker;
+	}
+
+
 	
 	@Override
 	public String toString() {
 
 		return "PhotoInnerJoinTaskDto [ worker=" + worker +
 								"task =" + task +
-								"photo =" + photo +
+								"tskphoto =" + tskphoto +
 								"owner =" + owner +
 								"owneremail =" + owneremail +
 								"kind =" +  kind +
@@ -164,5 +167,4 @@ public class PhotoInnerJoinTaskDto {
 								"hours =" + hours +
 								"]" ;
 	}
-
 }
