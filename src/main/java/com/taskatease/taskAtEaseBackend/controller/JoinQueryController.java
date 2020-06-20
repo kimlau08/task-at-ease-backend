@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.taskatease.taskAtEaseBackend.dto.PhotoInnerJoinTaskDto;
+import com.taskatease.taskAtEaseBackend.dto.PhotoInnerJoinTaskInnerJoinUserDto;
 import com.taskatease.taskAtEaseBackend.service.JoinQueryService;
 
 
@@ -21,8 +21,8 @@ public class JoinQueryController {
 	@Autowired
 	private JoinQueryService joinQueryService;
 	
-	@GetMapping("/photojointask")
-	public ResponseEntity<List<PhotoInnerJoinTaskDto>>getPhotoTaskInnerJoin() {
-		return new ResponseEntity<List<PhotoInnerJoinTaskDto>>(joinQueryService.getPhotoTaskInnerJoin(), HttpStatus.OK);
+	@GetMapping("/photojointaskjoinuser")
+	public ResponseEntity<List<PhotoInnerJoinTaskInnerJoinUserDto>>getPhotoTaskUserInnerJoin() {
+		return new ResponseEntity<List<PhotoInnerJoinTaskInnerJoinUserDto>>(joinQueryService.getPhotoTaskUserInnerJoin(), HttpStatus.OK);
 	}
 }

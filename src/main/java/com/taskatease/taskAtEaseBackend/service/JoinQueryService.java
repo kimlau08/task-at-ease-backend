@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.taskatease.taskAtEaseBackend.dto.PhotoInnerJoinTaskDto;
+import com.taskatease.taskAtEaseBackend.dto.PhotoInnerJoinTaskInnerJoinUserDto;
 import com.taskatease.taskAtEaseBackend.repository.TaskPhotoRepository;
 import com.taskatease.taskAtEaseBackend.repository.TaskRepository;
 
@@ -19,10 +19,9 @@ public class JoinQueryService {
 	@Resource
 	private TaskPhotoRepository taskPhotoRespository;
 	
-	public List<PhotoInnerJoinTaskDto> getPhotoTaskInnerJoin() {
-		List<PhotoInnerJoinTaskDto> list = taskPhotoRespository.fetchPhotoTaskInnerJoin();
+	public List<PhotoInnerJoinTaskInnerJoinUserDto> getPhotoTaskUserInnerJoin() {
+		List<PhotoInnerJoinTaskInnerJoinUserDto> list = taskPhotoRespository.fetchPhotoTaskUserInnerJoin();
 		list.forEach(l -> System.out.println(l));
 		return list;
 	}
-	
 }
