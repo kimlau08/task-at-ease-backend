@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +25,7 @@ import com.taskatease.taskAtEaseBackend.repository.TaskRepository;
 
 @RestController
 @RequestMapping("/tae_api/v1")
-
+@CrossOrigin
 public class TaskController {
 
 	@Autowired
@@ -41,7 +42,7 @@ public class TaskController {
 
 	//get a task by id
 
-	@GetMapping("/taskbyid/{id}")
+	@GetMapping("/task/{id}")
 	public ResponseEntity<Task> getTaskById(@PathVariable(value = "id") Long taskId)
 	    throws ResourceNotFoundException {
 	    Task task = taskRepository.findById(taskId)
@@ -52,7 +53,7 @@ public class TaskController {
 	
 	//get tasks by owner
 
-	@GetMapping("/task/{owner}")
+	@GetMapping("/taskbyowner/{owner}")
 	public List<Task> getTaskByOwner(@PathVariable(value = "owner") Long owner) {
 		
 	return this.taskRepository.findAllByOwner(owner);
