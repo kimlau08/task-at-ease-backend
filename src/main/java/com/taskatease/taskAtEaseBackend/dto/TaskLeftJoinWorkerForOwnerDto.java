@@ -1,6 +1,6 @@
 package com.taskatease.taskAtEaseBackend.dto;
 
-public class PhotoInnerJoinTaskInnerJoinUserDto {
+public class TaskLeftJoinWorkerForOwnerDto {
 
 	private String name;
 	private String email;
@@ -10,10 +10,7 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 	private String zip;
 	private String photo;
 
-	private long worker;
-	private long task;
-	private String tskphoto;
-	
+	private long id;
 	private long owner;
 	private String ownername;
 	private String owneremail;
@@ -24,8 +21,9 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 	private String skill2;
 	private String skill3;
 	private long hours;
+	private long worker;
 	
-	public PhotoInnerJoinTaskInnerJoinUserDto(
+	public TaskLeftJoinWorkerForOwnerDto(
 
 			String name,
 			String email,
@@ -34,11 +32,8 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 			String st,
 			String zip,
 			String photo,
-
-			long worker,
-			long task,
-			String tskphoto,
 			
+			long id,
 			long owner,
 			String ownername,
 			String owneremail,
@@ -48,7 +43,8 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 			String skill1,
 			String skill2,
 			String skill3,
-			long hours  )
+			long hours,
+			long worker )
 		{
 			this.name = name;
 			this.email = email;
@@ -57,11 +53,8 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 			this.st = st;
 			this.zip = zip;
 			this.photo = photo;
-
-			this.worker = worker;
-			this.task = task;
-			this.tskphoto = tskphoto;
 			
+			this.id = id;
 			this.owner = owner;
 			this.ownername = ownername;
 			this.owneremail = owneremail;
@@ -72,6 +65,7 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 			this.skill2 = skill2;
 			this.skill3 = skill3;
 			this.hours = hours;
+			this.worker = worker;
 		}
 	
 
@@ -79,7 +73,7 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 	@Override
 	public String toString() {
 
-		return "PhotoInnerJoinTaskInnerJoinUserDto [ "+
+		return "TaskLeftJoinWorkerForOwnerDto [ "+
 								" name = " + name +
 								" email = " + email +
 								" free = " + free + 
@@ -87,11 +81,8 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 								" st = " + st + 
 								" zip = " + zip + 
 								" photo = " + photo +
-
-								" worker=" + worker +
-								" task =" + task +
-								" tskphoto =" + tskphoto +
 								
+								" id =" + id +
 								" owner =" + owner +
 								" owneremail =" + owneremail +
 								" kind =" +  kind +
@@ -101,8 +92,10 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 								" skill2 =" + skill2 +
 								" skill3 =" + skill3 +
 								" hours =" + hours +
+								" worker=" + worker +
 								"]" ;
 	}
+
 
 
 	//getters 
@@ -149,20 +142,8 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 
 
 
-	public long getWorker() {
-		return worker;
-	}
-
-
-
-	public long getTask() {
-		return task;
-	}
-
-
-
-	public String getTskphoto() {
-		return tskphoto;
+	public long getId() {
+		return id;
 	}
 
 
@@ -224,7 +205,13 @@ public class PhotoInnerJoinTaskInnerJoinUserDto {
 	public long getHours() {
 		return hours;
 	}
-			
+
+
+
+	public long getWorker() {
+		return worker;
+	}
+	
 	
 	
 }

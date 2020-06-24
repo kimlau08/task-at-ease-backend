@@ -2,9 +2,17 @@ package com.taskatease.taskAtEaseBackend.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tasks")
@@ -48,8 +56,20 @@ public class Task {
 	@Column(name = "worker")
 	private long worker;
 	
+	
 
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="id", insertable=false, updatable=false)
+	@JsonIgnoreProperties("workedTasks")
+	@Fetch(FetchMode.JOIN)
+	private User workerObj;
 
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="id", insertable=false, updatable=false)
+	@JsonIgnoreProperties("ownedTasks")
+	@Fetch(FetchMode.JOIN)
+	private User ownerObj;
+	
 	
 	public long getId() {
 		return id;

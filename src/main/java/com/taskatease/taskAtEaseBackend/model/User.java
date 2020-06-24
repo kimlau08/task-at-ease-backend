@@ -1,10 +1,16 @@
 package com.taskatease.taskAtEaseBackend.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "users")
@@ -46,6 +52,15 @@ public class User {
 	
 	@Column(name = "rate")
 	private long rate;
+	
+	
+	@OneToMany(targetEntity = Task.class, mappedBy = "worker", orphanRemoval = false, fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("workerObj")
+	private Set<Task> workedTasks;
+	
+	@OneToMany(targetEntity = Task.class, mappedBy = "owner", orphanRemoval = false, fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("ownerObj")
+	private Set<Task> ownedTasks;
 	
 	
 	public User() {
