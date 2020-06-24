@@ -32,6 +32,15 @@ public class UserController {
 	
 	}
 	
+	//get all user by availability
+
+	@GetMapping("/useravailable/{free}")
+	public List<User> getAllByFree(@PathVariable(value = "free") String free) {
+		
+	return this.userRepository.findAllByFree(free);
+	
+	}
+
 	//get a user by id
 
 	@GetMapping("/userbyid/{id}")
