@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS task_db;
+-- DROP DATABASE IF EXISTS task_db;
 
-CREATE DATABASE task_db;
+-- CREATE DATABASE task_db;
 
 \c task_db ;
 

@@ -1,0 +1,16 @@
+
+1. Login as postgres to host
+
+2. Create user kimlau08
+
+   CREATE ROLE kimlau08 LOGIN PASSWORD kimlau08;
+   ALTER ROLE kimlau08 SUPERUSER; 
+   
+3. Create database as user postgres 
+
+   CREATE DATABASE task_db; 
+   
+4. Use psql to read sql files
+
+	psql -h localhost -U kimlau08 -d task_db -f create_task_db.sql 
+	psql -h localhost -U kimlau08 -d task_db -f init_task_db.sql
